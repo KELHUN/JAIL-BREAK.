@@ -23,7 +23,6 @@ var stateProp = Properties.GetContext().Get("State");	// свойство сос
 var inventory = Inventory.GetContext();					// контекст инвентаря
 
 // параметры режима
-Properties.GetContext().GameModeName.Value = "GameModes/Parcour";
 Damage.FriendlyFire = false;
 Map.Rotation = GameMode.Parameters.GetBool("MapRotation");
 BreackGraph.OnlyPlayerBlocksDmg = GameMode.Parameters.GetBool("PartialDesruction");
