@@ -26,6 +26,7 @@ var inventory = Inventory.GetContext();					// контекст инвентар
 Damage.FriendlyFire = false;
 
 // ��������� ����
+Properties.GetContext().GameModeName.Value = "GameModes/Team Dead Match";
 TeamsBalancer.IsAutoBalance = true;
 Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 BreackGraph.OnlyPlayerBlocksDmg = true;
