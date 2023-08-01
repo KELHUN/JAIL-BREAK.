@@ -1,15 +1,15 @@
 {
-  "Name": "побег",
-  "Description": "<B "
-  "StartClientVersion": 402,
+  "Name": "<B><color=#00008B>Захват</color> <color=#8B0000>Флагов</color></B>",
+  "Description": "<B>v1.0. Режим от just_qstn.</B>\nЗахватывайте флаги и переносите их на свою базу (свою зону)!\nДля создателей карт: триггеры зон захвата флага это red и blue, соответственно для каждой команды.",
+  "StartClientVersion": 334,
   "MapFilter": {
     "IsBlank": false,
     "HasParcourEnd": false
   },
   "MapLists": [
     {
-      "MapListId": 9390,
-      "Name": "Карта для режима Побег из тюрьмы"
+      "MapListId": 8596,
+      "Name": "Официальные карты"
     }
   ],
   "Parameters": {
@@ -17,7 +17,7 @@
       {
         "Name": "MapRotation",
         "DisplayName": "GmParams/MapRotation",
-        "Default": false
+        "Default": true
       },
       {
         "Name": "OnlyKnives",
