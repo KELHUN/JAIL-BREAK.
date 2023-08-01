@@ -24,12 +24,9 @@ var inventory = Inventory.GetContext();					// контекст инвентар
 
 // параметры режима
 Damage.FriendlyFire = false;
-Map.Rotation = GameMode.Parameters.GetBool("MapRotation");
-BreackGraph.OnlyPlayerBlocksDmg = GameMode.Parameters.GetBool("PartialDesruction");
-BreackGraph.WeakBlocks = GameMode.Parameters.GetBool("LoosenBlocks");
+Map.Rotation = 
 
 // ��������� ����
-Properties.GetContext().GameModeName.Value = "GameModes/Team Dead Match";
 TeamsBalancer.IsAutoBalance = true;
 Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 BreackGraph.OnlyPlayerBlocksDmg = true;
