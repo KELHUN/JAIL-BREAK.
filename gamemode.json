@@ -6,9 +6,9 @@
     "IsBlank": false,
     "HasParcourEnd": false
   },
-  "MapLists": [
+  "Map": [
     {
-      "MapListId": 9390,
+      "MapId": 40473,
       "Name": "Официальные карты"
     }
   ],
