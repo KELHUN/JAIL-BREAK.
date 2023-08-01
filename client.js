@@ -24,7 +24,6 @@ var inventory = Inventory.GetContext();					// контекст инвентар
 
 // параметры режима
 Damage.FriendlyFire = false;
-Map.Rotation = 
 
 // ��������� ����
 TeamsBalancer.IsAutoBalance = true;
