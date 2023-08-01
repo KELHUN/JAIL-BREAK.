@@ -1,0 +1,40 @@
+{
+  "Name": "<size=69><color=#b4b3ff>ПОБЕГ</color><color=#b3b2ff> ИЗ ТЮРЬМЫ</color></size>",
+  "Description": "<B> by Kelhun</B>\n<size=15>целью синих является сбежать в зону конца карты задача охраны не дать не одному збежать</size>"
+  "StartClientVersion": 402,
+  "MapFilter": {
+    "IsBlank": false,
+    "HasParcourEnd": false
+  },
+  "MapLists": [
+    {
+      "MapListId": 9390,
+      "Name": "Карта для режима Побег из тюрьмы"
+    }
+  ],
+  "Parameters": {
+    "Bool": [
+      {
+        "Name": "MapRotation",
+        "DisplayName": "GmParams/MapRotation",
+        "Default": false
+      },
+      {
+        "Name": "OnlyKnives",
+        "DisplayName": "GmParams/OnlyKnives"
+      },
+      {
+        "Name": "PartialDesruction",
+        "DisplayName": "GmParams/PartialDesruction"
+      },
+      {
+        "Name": "LoosenBlocks",
+        "DisplayName": "GmParams/LoosenBlocks"
+      },
+      {
+        "Name": "FriendlyFire",
+        "DisplayName": "GmParams/FriendlyFire"
+      }
+    ]
+  }
+}
