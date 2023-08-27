@@ -13,7 +13,6 @@ var BuildModeStateValue = "BuildMode";
 var GameStateValue = "Game";
 var EndOfMatchStateValue = "EndOfMatch";
 var EndAreaTag = "parcourend"; 	// тэг зоны конца паркура
-var EndTriggerPoints = 6666;	// сколько дается очков за завершение маршрута
 var LeaderBoardProp = "Leader"; // свойство для лидерборда
 
 // постоянные переменные
@@ -26,10 +25,11 @@ var inventory = Inventory.GetContext();					// контекст инвентар
 Damage.FriendlyFire = false;
 
 // ��������� ����
-Properties.GetContext().GameModeName.Value = "GameModes/Team Dead Match";
 TeamsBalancer.IsAutoBalance = true;
 Ui.GetContext().MainTimerId.Value = mainTimer.Id;
-BreackGraph.OnlyPlayerBlocksDmg = true;
+
+BreackGraph.OnlyPlayerBlocksDmg = GameMode.Parameters.GetBool("PartialDesruction");
+BreackGraph.WeakBlocks = GameMode.Parameters.GetBool("LoosenBlocks");
 
 // блок игрока всегда усилен
 BreackGraph.PlayerBlockBoost = true;
@@ -48,12 +48,6 @@ var blueTeam = Teams.Get("Blue");
 blueTeam.Spawns.SpawnPointsGroups.Add(1);
 blueTeam.Spawns.RespawnTime.Value = 0;
 blueTeam.Build.BlocksSet.Value = BuildBlocksSet.Blue;
-blueTeam.Inventory.Main.Value = false;
-blueTeam.Inventory.Secondary.Value = false;
-blueTeam.Inventory.SecondaryInfinity.Value = false;
-blueTeam.Inventory.Melee.Value = false;
-blueTeam.Inventory.Explosive.Value = false;
-blueTeam.Inventory.Build.Value = false;
 contextedProperties.GetContext(blueTeam).SkinType.Value = 2;
 contextedProperties.GetContext(blueTeam).MaxHp.Value = 200;
 Teams.Add("Red", "Oхрана", { r: 100 });
@@ -102,24 +96,31 @@ zon.Enable = true;
 zon.OnEnter.Add(function(p, area) {
   switch (area.Name) {
     case "Build":
+      if(GameMode.Parameters.GetBool("Build")){
       if (p.Team !== redTeam && p.inventory.Build.Value == false){
       p.inventory.Build.Value = true;
 	  p.Ui.Hint.Value = "ты взял строительные средства";
 	  }else{p.Ui.Hint.Value = "у вас уже есть этот предмет"}
+	  }else{p.Ui.Hint.Value = "увы но здесь нечего нет..."}
       break;
     case "Secondary ":
+      if(GameMode.Parameters.GetBool("Secondary")){
       if (p.Team !== redTeam && p.inventory.Secondary.Value == false){
       p.inventory.Secondary.Value = true;
       p.Ui.Hint.Value = "ты взял пестолет";
       }else{p.Ui.Hint.Value = "у вас уже есть это оружие"}
+      }else{p.Ui.Hint.Value = "увы но здесь нечего нет..."}
       break;
     case "Melee":
+      if(GameMode.Parameters.GetBool("Melee")){
       if (p.Team !== redTeam && p.inventory.Melee.Value == false){
       p.inventory.Melee.Value = true;
       p.Ui.Hint.Value = "ты взял нож";
       }else{p.Ui.Hint.Value = "у вас уже есть это оружие"}
+      }else{p.Ui.Hint.Value = "увы но здесь нечего нет..."}
       break;
     case "Main":
+      if(GameMode.Parameters.GetBool("Main")){
       if (blueTeam.Properties.Get("main").Value >= 3){
       p.Ui.Hint.Value = "тут уже нету оружия";
       }else{
@@ -129,6 +130,7 @@ zon.OnEnter.Add(function(p, area) {
       p.Ui.Hint.Value = "ты взял основное оружие";
       }else{p.Ui.Hint.Value = "у вас уже есть это оружие"}
       }
+      }else{p.Ui.Hint.Value = "увы но здесь нечего нет..."}
       break;
   }
 });
