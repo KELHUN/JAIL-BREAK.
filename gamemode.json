@@ -15,25 +15,27 @@
   "Parameters": {
     "Bool": [
       {
-        "Name": "MapRotation",
-        "DisplayName": "GmParams/MapRotation",
+        "Name": "PartialDesruction",
+        "DisplayName": "GmParams/PartialDesruction",
         "Default": true
       },
       {
-        "Name": "OnlyKnives",
-        "DisplayName": "GmParams/OnlyKnives"
+        "Name": "Build",
+        "DisplayName": "Зона Строительных материалов",
+        "Default": true
       },
       {
-        "Name": "PartialDesruction",
-        "DisplayName": "GmParams/PartialDesruction"
+        "Name": "Melee",
+        "DisplayName": "Зона Холодного оружия",
+        "Default": true
       },
       {
-        "Name": "LoosenBlocks",
-        "DisplayName": "GmParams/LoosenBlocks"
+        "Name": "Main",
+        "DisplayName": "Зона Основного оружия"
       },
       {
-        "Name": "FriendlyFire",
-        "DisplayName": "GmParams/FriendlyFire"
+        "Name": "Secondary",
+        "DisplayName": "Зона Вторичного оружия"
       }
     ]
   }
