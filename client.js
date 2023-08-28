@@ -74,8 +74,8 @@ var endTrigger = AreaPlayerTriggerService.Get("EndTrigger");
 endTrigger.Tags = ["EndAreaTag"];
 endTrigger.Enable = true;
 endTrigger.OnEnter.Add(function (p) {
-endTrigger.Enable = false;
 if(p.Team !== Teams.Get("Red")){
+endTrigger.Enable = false;
 p.Properties.Get(LeaderBoardProp).Value += 6666;
 p.Properties.Scores.Value += 6000;
 SetEndOfMatchMode();
